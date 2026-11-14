@@ -1,22 +1,2 @@
 # Creatival
-Well, welcome to Creatival (from: creativity, because the objective of the game is to make creative ascii arts with just numbers on a terminal).
-
-# Developer's note
-
-hey guys if you wonder why did I delete and create new tags is because the format is Stage-x.y.z where z is .01 / .02 because maybe we get to the pre alpha / alpha .10 and to use the standart decimal system because it's better, .10 would be .1, so there cannot be already a 0.0.1 because it would be 0.0.10.
-
-Well imma start makin' 0.0.3 to give a little bit of entertainment to the new forest mechanics
-
-# Developing Stages
-
-This is our road to stable release so you can see on what project stage you are in:
-
-**PreAlpha**: the pre alphas, are the first developing stage on the project. Starting as a little concept
-
-**Alpha**: the alphas are the second stage of the project, meaning it got a little bit more serious, not extremely serious but a little bit more than PreAlpha
-
-**ProtoBeta**: a proto beta is one stage to mark the transition from alpha to Beta version wich are the versions that are near stable release.
-
-**Beta**: the last stage of the project before release, when the project has already have developed a lot from the PreAlphas and it's almost ready to release
-
-**Stable Release**: the stage when the project is ready, on this stage the project has already evolved a lot and it's a lot more serious than on the Alphas or PreAlphas
+The number ascii art maker with adders starting with ones!

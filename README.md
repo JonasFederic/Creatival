@@ -3,7 +3,7 @@ Well, welcome to Creatival (from: creativity, because the objective of the game 
 
 # Developer's note
 
-if someone reads this, I DID IT, IT TOOK ME SOME TIME BUT I FINISHED THE PRE ALPHA 0.0.02
+guys I finished 0.0.03 im gonna publish it rn
 
 # Developing Stages
 

@@ -1,4 +1,4 @@
-int monsteratack(int* healthptr, int* monsterhealth, int base) {
+int monsteratack(int* healthptr, int* monsterhealth) {
 	int answer;
 	scanf("%d", &answer);
 
@@ -21,8 +21,8 @@ int monsteratack(int* healthptr, int* monsterhealth, int base) {
 		*healthptr -= 1;
 		printf("Your health: %d, Monster's health: %d\n", *healthptr, *monsterhealth);
 	} else {
-		return 1;
 		printf("You ran from the forest\nYour health: %d, Monster's health: %d\n", *healthptr, *monsterhealth);
+		return 1;
 	} return 0;
 }
 
@@ -33,7 +33,7 @@ int monsterload(int base, int *healthptr) {
 	printf("Your health: %d, Monster's health: %d\n", *healthptr, monsterhealth);
 
 	while (monsterhealth > 0 && *healthptr > 0) {
-		int res = monsteratack(healthptr, &monsterhealth, base);
+		int res = monsteratack(healthptr, &monsterhealth);
 		if (res == 1) return 1;
 	} return 0;
 }

@@ -10,7 +10,10 @@ void printinv(void* invptr) {
 	}
 }
 
-int modifyinv(int answer, void* invptr, int* forestnptr, int* healthptr, int* monstercount) {
+int eplrinv(void* invptr, int* forestnptr, int* healthptr, int* monstercount) {
+	int answer;
+	printf("Type 1-80 to select an inventory slot,\ntype another number to go to the forest!\n");
+	scanf("%d", &answer);
 	int* inv = (int*)invptr;
 	if ((answer > 0) && (answer < 81)) {
 		int secondanswer;
@@ -44,6 +47,50 @@ int modifyinv(int answer, void* invptr, int* forestnptr, int* healthptr, int* mo
 			return 1;
 		} else {
 			inv[round] = nfromforest;
+			return 0;
+		}
+	}
+}
+
+int clscinv(void* invptr) {
+	int answer;
+	printf("Type 1-80 to select an inventory slot,\ntype another number to create a number!\n");
+	scanf("%d", &answer);
+	int* inv = (int*)invptr;
+	if ((answer > 0) && (answer < 81)) {
+		int secondanswer;
+		printf("Do you want to add the number at this position typing 1 with another or move it if you type anything else?\n");
+		scanf("%d", &secondanswer);
+		if (secondanswer == 1) {
+			printf("Type the position of the number that you wanna add to this number...\n");
+			scanf("%d", &secondanswer);
+
+			if ( !( (secondanswer > 0) && (secondanswer < 81) ) ) return 1;
+			inv[answer - 1] = inv[answer - 1] + inv[secondanswer - 1];
+			if (answer != secondanswer) inv[secondanswer - 1] = 0;
+			return 0;
+		} else {
+			printf("Type the position that you wanna move the number in that position...\n");
+			scanf("%d", &secondanswer);
+
+			if ( !( (secondanswer > 0) && (secondanswer < 81) ) ) return 1;
+			if (answer == secondanswer) return 1;
+			inv[secondanswer - 1] = inv[answer - 1];
+			inv[answer - 1] = 0;
+			return 0;
+		}
+	} else {
+		int secondanswer;
+		int round = 0;
+		printf("Type the number you want to add to your inventory:\n");
+		scanf("%d", &secondanswer);
+
+		while (round != 80 && inv[round] != 0) round++;
+		if (round == 80) {
+			printf("No space left on inventory!\n");
+			return 1;
+		} else {
+			inv[round] = secondanswer;
 			return 0;
 		}
 	}

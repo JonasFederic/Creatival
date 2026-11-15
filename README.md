@@ -3,7 +3,7 @@ Well, welcome to Creatival (from: creativity, because the objective of the game 
 
 # Developer's note
 
-guys I finished 0.0.03 im gonna publish it rn
+After some time I have done a little version that clears a little bit the game and gives you a chance to do not have to go to the forests to get numbers
 
 # Developing Stages
 

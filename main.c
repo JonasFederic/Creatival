@@ -1,5 +1,6 @@
 // Extern includes
 #include<stdio.h>
+#include<limits.h>
 
 // Complex extern includes
 #ifdef __linux__
@@ -13,21 +14,32 @@
 #endif
 
 // Project includes
+#include"monster.h"
 #include"forest.h"
 #include"inv.h"
+#include"game.h"
 
 int main() {
-	printf("Welcome to creatival (vPre-Alpha0.03)!\nThe number ascii art maker collecting base numbers via forest exploration!\n");
-	printf("Type 1-80 to select an inventory slot,\ntype another number to go to the forest!\n");
-	int inv[80] = {0};
-	int health = 100;
-	int answer;
-	int forest = 1;
-	int monster = 1;
-	while (health > 0) {
-		printinv(inv);
+	int gamemode;
+	printf("  CCCC  RRRR    EEEEEE  AAAAAA  TTTTTT  IIIIII  VV      VV  AAAAAA  LL    \n");
+	printf("CC      RR  RR  EE      AA  AA    TT      II    VV      VV  AA  AA  LL    \n");
+	printf("CC      RR  RR  EE      AA  AA    TT      II    VV      VV  AA  AA  LL    \n");
+	printf("CC      RRRR    EEEEEE  AAAAAA    TT      II      VV  VV    AAAAAA  LL    \n");
+	printf("CC      RR  RR  EE      AA  AA    TT      II      VV  VV    AA  AA  LL    \n");
+	printf("  CCCC  RR  RR  EEEEEE  AA  AA    TT    IIIIII      VV      AA  AA  LLLLLL\n\n");
 
-		scanf("%d", &answer);
-		modifyinv(answer, inv, &forest, &health, &monster);
-	} printf("Game over!\n");
+	printf("                         (vPreAlpha-0.0.04)                                \n\n");
+
+	printf("                         [1] Explorer's mode                               \n");
+	printf("                         [2] Classic mode                                  \n\n");
+
+	scanf("%d", &gamemode);
+
+	if (gamemode == 1) {
+		explorermode();
+		return 0;
+	} else if (gamemode == 2) {
+		classicmode();
+		return 0;
+	} return 1;
 }

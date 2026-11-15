@@ -1,5 +1,3 @@
-#include"monster.h"
-
 void printforest(int forest[8]) {
 	printf("[1: %d][2: %d][3: %d][4: %d]\n[5: %d][6: %d][7: %d][8: %d]\n", forest[0], forest[1], forest[2], forest[3], forest[4], forest[5], forest[6], forest[7]);
 }
@@ -14,19 +12,24 @@ int goforest(int forest[8], int* healthptr, int* monstercount) {
 		return 0;
 	}
 
+	int res = 0;
 	if (*monstercount == 1) {
 		*monstercount = 2;
 	} else if (*monstercount == 2) {
-		monsterload(forest[pos - 1], healthptr);
+		res = monsterload(forest[pos - 1], healthptr);
 		*monstercount = 3;
 	} else {
 		*monstercount = 1;
 	}
 
-	printf("Extracting number...\n");
-	SLEEP_S(forest[pos - 1]);
+	if (res == 0) {
+		printf("Extracting number...\n");
+		SLEEP_S(forest[pos - 1]);
 
-	return forest[pos - 1];
+		return forest[pos - 1];
+	}
+	printf("You didn't extract nothing from the forest.\nYou came with a zero at your hands.\n");
+	return 0;
 }
 
 int forest(int* forestnptr, int* healthptr, int* monstercount) {

@@ -39,16 +39,16 @@ int eplrinv(void* invptr, int* forestnptr, int* healthptr, int* monstercount) {
 		}
 	} else {
 		int nfromforest = forest(forestnptr, healthptr, monstercount);
-		int round = 0;
+		int secondanswer;
+		printf("Select the inventory slot you want to rewrite with this number\n");
+		scanf("%d", &secondanswer);
 
-		while (round != 80 && inv[round] != 0) round++;
-		if (round == 80) {
-			printf("No space left on inventory!\n");
-			return 1;
+		if ((secondanswer > 0) &&(secondanswer < 81)) {
+			inv[secondanswer - 1] = nfromforest;
 		} else {
-			inv[round] = nfromforest;
-			return 0;
+			printf("Invalid inventory slot\n");
 		}
+		return 0;
 	}
 }
 
@@ -81,17 +81,16 @@ int clscinv(void* invptr) {
 		}
 	} else {
 		int secondanswer;
-		int round = 0;
 		printf("Type the number you want to add to your inventory:\n");
 		scanf("%d", &secondanswer);
+		int thirdanswer;
+		printf("Select the inventory slot you want to rewrite with this number\n");
+		scanf("%d", &thirdanswer);
 
-		while (round != 80 && inv[round] != 0) round++;
-		if (round == 80) {
-			printf("No space left on inventory!\n");
-			return 1;
+		if ((thirdanswer > 0) &&(thirdanswer < 81)) {
+			inv[thirdanswer] = secondanswer;
 		} else {
-			inv[round] = secondanswer;
-			return 0;
-		}
+			printf("Invalid inventory slot\n");
+		} return 0;
 	}
 }

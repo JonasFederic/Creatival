@@ -28,7 +28,7 @@ int main() {
 	printf("CC      RR  RR  EE      AA  AA    TT      II      VV  VV    AA  AA  LL    \n");
 	printf("  CCCC  RR  RR  EEEEEE  AA  AA    TT    IIIIII      VV      AA  AA  LLLLLL\n\n");
 
-	printf("                         (vPreAlpha-0.0.04)                                \n\n");
+	printf("                         (vPreAlpha-0.0.06)                                \n\n");
 
 	printf("                         [1] Explorer's mode                               \n");
 	printf("                         [2] Classic mode                                  \n\n");
